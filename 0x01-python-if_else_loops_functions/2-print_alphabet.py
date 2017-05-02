@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-while ('a' <= 'z'):
-    'a' += 1
-    print("{}".format(a, end=""))
+alpha = 97
+while alpha <= 122:
+    print("{}".format(chr(alpha)),end="")
+    alpha += 1
