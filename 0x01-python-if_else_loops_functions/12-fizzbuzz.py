@@ -1,14 +1,16 @@
 #!/usr/bin/python3
 def fizzbuzz():
-    for x in range(1,99):
-        i = ""
+    for x in range(1,100):
+        if x % 3 != 0 and x % 5 != 0:
+            print(x, "", end="")
         if x % 3 == 0:
             print("Fizz ", end="")
         if x % 5 == 0:
             print("Buzz ", end="")
-        if i  == "":
-            i = x
-            print(i , end="")
+        elif x % 3 == 0 and x % 5 == 0:
+            print("FizzBuzz")
+            '''if x % 3 != 0 and x % 5 != 0:
+            print(x, "", end="")'''
 
     ''' i = 0
     while i <= 100:
