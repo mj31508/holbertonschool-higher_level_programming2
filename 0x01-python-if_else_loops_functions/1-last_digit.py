@@ -12,6 +12,6 @@ if number < 0:
 if last > 5:
     print("{}{} is {}".format(s, number, last) + "{}".format(s2))
 elif last == 0:
-    print("{}{} is {}".format(s, number, last) + "{} ".format(s3))
-elif last < 6 and last !=0:
+    print("{}{} is {}".format(s, number, last) + "{}".format(s3))
+elif last < 6 and last != 0:
     print("{}{} is {}".format(s, number, last) + "{}".format(s4))
