@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 from calculator_1 import add, sub, mul, div
 a, b = 10, 5
 print("{} + {} = {}".format(a, b, add(a, b)))
