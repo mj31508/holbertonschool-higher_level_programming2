@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 if __name__=="__main__":
     import sys
-    total = o
+    total = 0
     args = len(sys.argv)
-    for i in rage(1, args):
+    for i in range(1, args):
         total += (int(sys.argv[i]))
-    print("{}".forat(total))
+    print("{}".format(total))
