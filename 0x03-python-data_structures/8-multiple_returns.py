@@ -4,5 +4,7 @@ def multiple_returns(sentence):
     if str_l is None:
         return
     if sentence == "":
-        sentence[0] = None
-    return str_l, sentence[0]
+        char = None
+    else:
+       char = sentence[0]
+    return str_l, char
