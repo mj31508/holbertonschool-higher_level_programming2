@@ -6,5 +6,5 @@ def multiple_returns(sentence):
     if sentence == "":
         char = None
     else:
-       char = sentence[0]
+        char = sentence[0]
     return str_l, char
