@@ -1,0 +1,3 @@
+#!/usr/bin/python3
+def search_replace(my_list, search, replace):
+    filter_list = list(filter(lambda x: (x==2), my_list)
