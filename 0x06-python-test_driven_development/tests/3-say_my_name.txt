@@ -1,0 +1,56 @@
+The say_my_name Module:
+========================
+
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+
+
+    >>> say_my_name("Holberton", "School")
+        My name is Holberton School
+
+    >>> say_my_name("Max")
+        My name is Max
+
+    >>> say_my_name("James", "Brown Smith")
+        My name is James Brown Smith
+
+    >>> say_my_name("Barack Obama")
+        My name is Barack Obama
+
+
+
+    >>> say_my_name()
+        Traceback (most recent call last):
+	    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+    >>> say_my_name("Whats", "my", "name")
+        Traceback (most recent call last):
+	    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+    >>> say_my_name($)
+        Traceback (most recent call last):
+	    TypeError: first_name must be a string
+
+    >>> say_my_name($, 5)
+        Traceback (most recent call last):
+	    TypeError: first_name must be a string
+
+    >>> say_my_name(', "J")
+        Traceback (most recent call last):
+	    TypeError: first_name must be a string
+
+    >>> say_my_name("hi", %)
+        Traceback (most recent call last):
+	    TypeError: last_name must be a string
+
+    >>> say_my_name($, "Wumbly")
+        Traceback (most recent call last):
+	    TypeError: first_name must be a string
+
+    >>> say_my_name("MJ", [$, @])
+        Traceback (most recent call last):
+	    TypeError: last_name must be a string
+
+    >>> say_my_name([9, 00], "Hogan")
+        Traceback (most recent call last):
+	TypeError: first_name must be a string

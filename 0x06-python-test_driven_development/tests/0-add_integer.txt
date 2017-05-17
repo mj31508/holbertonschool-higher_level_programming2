@@ -1,0 +1,46 @@
+The Add_Integer Module:
+=======================
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+
+
+
+    >>> print(add_integer(5, 10))
+        15
+
+    >>> print(add_integer(51, -2))
+        49
+
+    >>> print(add_integer(50.3, -2))
+        48
+
+    >>> print(add_integer(-33.3, -2))
+        -31
+
+    >>> print(add_integer(2**4, -2))
+        16
+
+    >>> print(add_integer(5**0.9, -4))
+        8
+
+
+    >>> print(add_integer(1, "Bety"))
+        Traceback (most recent call last):
+	    TypeError: b must be an integer
+
+    >>> print(add_integer("Holberton", "School"))
+        Traceback (most recent call last):
+	    TypeError: a must be an integer
+
+    >>> print(add_integer(None, None))
+        Traceback (most recent call last):
+	    TypeError: a must be an integer
+
+    >>> print(add_integer([1, 2, 3], 1))
+        Traceback (most recent call last):
+	    TypeError: a must be an integer
+
+    >>> print(add_integer(n(1), -1))
+        Traceback (most recent call last):
+	NameError: name 'n' is not defined
