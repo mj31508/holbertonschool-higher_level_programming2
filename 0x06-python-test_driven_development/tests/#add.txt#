@@ -6,14 +6,7 @@ The Add_Integer Module:
 Make Sure Documentation Exists:
 
     >>> module_documentation = __import__("0-add_integer").__doc__
-        >>> print(len(module_documentation) > 0)
-	    True
-
-    >>> function_documentation = __import__("0-add_integer").add_integer.__doc__
-        >>> print(len(function_documentation) > 0)
-	    True
-
-C
+        >>> print(len(module_documentation)
 
     >>> print(add_integer(1, 2))
         3

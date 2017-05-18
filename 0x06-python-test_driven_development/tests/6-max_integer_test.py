@@ -1,71 +1,66 @@
-# Test list with only ints
-max_integer([1, 2, 3, 4])
+#!/usr/bin/python3
+"""Unittest for max_integer([..])
+"""
+import unittest
+max_integer = __import__('6-max_integer').max_integer
 
-# Test list with not an int
-max_integer([a, 1, 2, 4])
+class TestMaxInteger(unittest.TestCase):
 
-# floats
-max_integer([4, 4.4, 4.8])
+    def test_with_ints(self):
+        self.assertEqual(max_integer([1,2,3,4]),4)
 
-# Large Int
-max_integer([99999999999999999999999, 1])
+    def test_float(self):
+        self.assertEqual(max_integer([1,2.0,3,4],2.0)
 
-# Test no input
-max_integer()
+    def test_large_int(self):
+        self.assertTrueEqual(max_integer([54085308],54085308)
 
-# Test empty list
-max_integer([])
+    def test_bool(self):
+        self.assertEqual(max_integer([True, False, 3, 4], 4)
 
-# Test with a string
-max_integer(["hi", 1, 2, 3])
+     def test_list_of_string(self):
+        self.assertEqual(max_integer(["Holby"]), "Holby")
 
-# Test with a boolean
-max_integer([True, False, 1, 2, 3])
+    def test_max_string(self):
+        self.assertEqual(max_integer("Hakeem"), 'm')
 
-# Test a string in a list
-max_integer(["hi!", 1, 2, 3])
+    def test_bool_list(self):
+        self.assertEqual(max_integer([True, False, 3, 4]), 4)
 
-# Test a string
-max_integer("hi")
+    def test_negatives(self):
+        self.assertEqual(max_integer([-5, -1, -19, 2]), 2)
 
-# Test an int
-max_integer(9)
+    def test)none(self):
+        self.assertEqual(max_integer([None]), None)
 
-# Test a float
-max_integer(5.6)
+    @unittest.expectedFailure
+    def test_c_list(self):
+        self.assertEqual(max_integer(c), NameError)
 
-# Test a negative
-max_integer(-99)
+    @unittest.expectedFailure
+    def test_none_at_all(self):
+        self.assertEqual(max_integer([None, None, None, None]), TypeError)
 
-# Test a list of negatives
-max_integer([-4, -3, 1, -9])
+    @unittest.expectedFailure
+    def test_no_paren(self):
+        self.assertEqual(max_integer(None), TypeError)
 
-# Test a list incl None
-max_integer([1, 3, None, 7])
+    @unittest.expectedFailure
+    def test_minus(self):
+        self.assertEqual(max_integer(-[1, 2, 3, 4]), TypeError)
 
-# Test None
-max_integer(None)
+    @unittest.expectedFailure
+    def test_one_digit(self):
+        self.assertEqual(max_integer([1]), TypeError)
 
-# Test None as list
-max_integer([None])
+    @unittest.expectedFailure
+    def test_with_No_ints(self):
+        self.assertEqual(max_integer([1, None, 3, None]), TypeError)
 
-# Test a negative sign in front of list
-max_integer(-[1, 4, 5, 6])
+    @unittest.expectedFailure
+    def test_string_in_intlist(self):
+        self.assertEqual(max_integer([1, 2, 3, "hi"]), TypeError)
 
-# Test a list of floats
-max_integer([4.5, 6.7, 7.8])
-
-# Test None None None
-max_integer([None, None, None])
-
-# a set
-max_integer({5, 8, 0, 99})
-
-# list of sets
-max_integer([{5, 7}, {5, 1, 99}])
-
-# list of tuples
-max_integer([(1, 1), (99, 99)])
-
-# a tuple
-max_integer((1, 99, 5, 8))
+    @unittest.expectedFailure
+    def test_string(self):
+        self.assertEqual(max_integer(["max", 1,2,3], TypeError)
