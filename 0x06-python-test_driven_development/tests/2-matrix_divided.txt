@@ -1,45 +1,72 @@
-# matrix = [[1, 2, 3],[4, 5, 6]]
+matrix_divided Module:
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
 
-# input of standard matrix and div = integer
-print matrix_divided(matrix, 3)
 
-# input of standard matrix and div = float
-print matrix_divided(matrix, 1.5)
+Proper Usage:
 
-# print the matrix
-print matrix
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
 
-# input of div = 'string'
-print matrix_divided(matrix, "Hi")
+    >>> print(matrix_divided(matrix, -2))
+    [[-0.5, -1.0, -1.5], [-2.0, -2.5, -3.0]]
 
-# input of div = 0
-print matrix_divided(matrix, 0)
+    >>> print(matrix_divided(matrix, 2.5))
+    [[0.4, 0.8, 1.2], [1.6, 2.0, 2.4]]
 
-# change the matrix to not be symmetrical
-matrix = [[1, 2, 3],[4, 6]]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
-# test above asymmetrical matrix
-print matrix_divided(matrix, 2)
+    >>> print(matrix_divided(matrix, True))
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
 
-# change the matrix to be symmetrical, but has a string
-matrix = [[1, 'hi', 2], [5, 7, 8]]
+    >>> matrix = [[1, 2, 3]]
+    >>> print(matrix_divided(matrix, 1))
+    [[1.0, 2.0, 3.0]]
 
-# input of new matrix that includes strings
-print matrix_divided(matrix, 6)
+Wrong Usage:
 
-# matrix is None
-print matrix_divided(None, 2)
 
-# matrix includes True and False
-matrix = [[True, False], [1, 0]]
 
-print matrix_divided(matrix, 2)
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
 
-# no arguments
-print matrix_divided()
+    >>> print(matrix_divided(matrix, False))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
 
-# extra args
-print matrix_divided(matrix, 2, "well hello there")
+    >>> print(matrix_divided(matrix, 'c'))
+    Traceback (most recent call last):
+    TypeError: div must be a number
 
-# True is passed instead of matrix
-print matrix_divided(True, 2)
+
+    >>> matrix = [[]]
+    >>> print(matrix_divided(matrix, 1))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = None
+    >>> print(matrix_divided(matrix, 1))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = []
+    >>> print(matrix_divided(matrix, 1))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [[1, -2, 3], {4, 8, 6}, {7, 2, 9}]
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [[1, 2, -3], [14, 5.0, 6, 7]]
+    >>> print(matrix_divided(matrix, 1))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix = [[1, "gone", 'but'], ["bye", 5, 6]]
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
