@@ -18,3 +18,19 @@ Area: 25 for size: 5
 >>> my_square = Square(10000000000)
 >>> print("Area: {} for size: {}".format(my_square.area(), my_square.size))
 Area: 100000000000000000000 for size: 10000000000
+
+Error:
+>>> my_square = Square(2.2)
+Traceback (most recent call last):
+	  ...
+TypeError: size must be an integer
+
+>>> my_square = Square("Max")
+TraceError (most recent call last):
+	   ...
+TypeError: size must be an integer
+
+>>> my_square = Square(-5)
+TraceError (most recent call last):
+	   ...
+TypeError: Size must be >= 0
