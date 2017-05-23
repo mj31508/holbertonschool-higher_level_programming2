@@ -1,49 +1,20 @@
-Test Module
-===========
+Test Module:
 Import:
-   >>>square_test = __import__('4-square').Square
-===========
+>>> Square = __import__('4-square').Square
 
 Correct:
->>> square = square_test()
->>> print("{}".format(square.size))
-0
 
->>> square = square_tests(15)
->>> print("{}".format(square.size))
-15
+# multiply 10
+>>> my_square = Square(10)
+>>> print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+Area: 100 for size: 10
 
->>> square = square_test(5)
->>> print("{:d}".formatsquare.area()))
-25
+# test by negative number
+>>> my_square = Square(5)
+>>> print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+Area: 25 for size: 5
 
-square.size = 9
->>> print("{:d}".format(square.area()))
-81
-
-square.size = 9
->>> print("{}".format(square.size))
-9
-
-print(square__dict__)
-{'_Square__size': 15}
-
-Errors:
->>> square = square_test(5)
->>> print("{}".format(squareprin.size))
-Traceback (most recent call last):
-
-NameError: name 'tests' is not defined
-
->>> square.size = "Holberton"
-Traceback (most recent call last):
->>> print("{}".format(square.size))
-TypeError: size must be an integer
-
-square = square_test(15)
->>> print("{}".format(square_test_pow()))
-AttributeError: type object 'Square' has no attribute 'pow'
-
-print(square.__dict)
-
-AttributeError: 'Square' object has no attribute '__dict'
+# large number test
+>>> my_square = Square(10000000000)
+>>> print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+Area: 100000000000000000000 for size: 10000000000
