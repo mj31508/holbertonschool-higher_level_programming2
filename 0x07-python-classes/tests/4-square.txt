@@ -1,0 +1,27 @@
+Test Module
+===========
+Import:
+   >>>Tests = __import__(4'-square').Square
+===========
+
+Correct:
+>>> square = Tests()
+>>> print("{}".format(square.size))
+0
+
+>>> square = Tests(15)
+>>> print("{}".format(square.size))
+15
+
+
+
+Errors:
+>>> square = Tests(5)
+>>> print("{}".format(Tests.size))
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'tests' is not defined
+
+>>> square.size = "Holberton"
+Traceback (most recent call last):
+TypeError: size must be an integer
