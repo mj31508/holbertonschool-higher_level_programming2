@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+"""
+rectangle class
+"""
+
+Rectangle = __import__('9-rectangle').Rectangle
+
+class Rectangle(BaseGeometry):
+    def __init__(self,size):
