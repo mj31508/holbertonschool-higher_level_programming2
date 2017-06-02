@@ -11,6 +11,75 @@ Tests:
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("name", "john")
+___TypeErrors___
+***As string***
+try:
+     bg.integer_validator("name", "john")
+except Exception as e:
+     print("[{}] {}".format(e.__class__.__name__, e))
+TypeError: name must be an integer
+
+***As List***
+try:
+     bg.integer_validator("name", [Bobby, Ricky, Mike]
+     print("[{}] {}".format(e.__class__.__name__, e))
+TypeError: name must be an integer
+
+***As Tuple***
+try:
+    bg.integer_validator("name", (Julian, Slyvan, Jul)
+    print("[{}] {}".format(e.__class__.__name__, e))
+TypeError: name must be an integer
+
+***As Float***
+try:
+    bg.integer_validator("name", 4.8)
+    print("[{}] {}".format(e.__class__.__name__, e))
+TypeError: name must be an integer
+
+***As Dict***
+try:
+   bg.integer_validator("name", {'name': 'max'}
+   print("[{}] {}".format(e.__class__.__name__, e))
+TypeError: name must be an integer
+
+***If Null***
+try:
+   bg.integer_validator("name", None)
+   print("[{}] {}".format(e.__class__.__name__, e))
+TypeError: name must be an integer
+
+***If set***
+try:
+   bg.integer_validator("name", {1,2,3,4,5})
+   print("[{}] {}".format(e.__class__.__name__, e))
+TypeError: name must be an integer
+
+***If Boolean***
+try:
+   bg.integer_validator("name", TRUE)
+   print("[{}] {}".format(e.__class__.__name__, e))
+TypeError: name must be an integer
+
+***If Empty***
+try:
+   bg.integer_validator("name",)
+   print("[{}] {}".format(e.__class__.__name__, e))
+TypeError: name must be an integer
+
+***If Zero***
+try:
+   bg.integer_validator("name", 0)
+   print("[{}] {}".format(e.__class__.__name__, e))
+ValueError: name must be greater than 0
+
+***If negative number***
+try:
+   bg.integer_validator("name", -8)
+   print("[{}] {}".format(e.__class__.__name__, e))
+ValueError: name must be greater than 0
+
+"
 Traceback (most recent call last):
 
 
@@ -19,3 +88,7 @@ TypeError: name must be an integer
 Traceback (most recent call last):
 
 ValueError: distance must be greater than 0
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+
+ValueError: age must be greater than 0
