@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+"""
+Read a text file
+"""
+
+
+def number_of_lines(filename=""):
+    with open(filename) as filename:
+        read_file = filename.read
+        print(read_file)
