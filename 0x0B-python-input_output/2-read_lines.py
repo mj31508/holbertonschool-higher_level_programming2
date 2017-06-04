@@ -2,7 +2,7 @@
 """
 read n lines of txt file
 """
-
+f
 
 def read_lines(filename="", nb_lines=0):
     line_count = 0
