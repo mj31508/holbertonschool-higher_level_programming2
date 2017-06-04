@@ -10,12 +10,12 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-        def to_json(self, attrs=None):
-            if attrs is None:
-                return self.__dict__
-            else:
-                dict1 = {}
-                for attr in attrs:
-                    if hasattr(self, attr):
-                        dict1[attr] = getattr(self, attr)
-                return dict1
+    def to_json(self, attrs=None):
+        if attrs is None:
+            return self.__dict__
+        else:
+            dict1 = {}
+            for attr in attrs:
+                if hasattr(self, attr):
+                    dict1[attr] = getattr(self, attr)
+            return dict1
