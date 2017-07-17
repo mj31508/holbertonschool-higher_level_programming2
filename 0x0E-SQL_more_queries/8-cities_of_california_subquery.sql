@@ -1,0 +1,6 @@
+-- script that lists all the cities in a database
+USE hbtn_0d_usa;
+
+SELECT * FROM cities;
+WHERE name = California;
+ORDER BY cities.id;
