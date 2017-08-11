@@ -13,7 +13,7 @@ if __name__ == "__main__":
     query_rows = now.fetchone()
 
     for row in query_rows:
-        print(row)
+        print(query_rows)
         query_rows = now.fetchone()
     now.close()
     connect.close()
