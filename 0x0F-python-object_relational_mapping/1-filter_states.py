@@ -10,9 +10,10 @@ if __name__ == "__main__":
 
     now = connect.cursor()
 
-    query_rows = now.fetchall()
+    query_rows = now.fetchone()
 
     for row in query_rows:
         print(row)
+        query_rows = now.fetchone()
     now.close()
     connect.close()
