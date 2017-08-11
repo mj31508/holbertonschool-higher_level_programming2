@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """selecting items from a db"""
 
-if __name__ "__main__":
+if __name__ == "__main__":
     import MySQLdb
     import sys
     connect = MySQLdb.connect(user=sys.argv[1], host="localhost",
