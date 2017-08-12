@@ -2,18 +2,26 @@
 """selecting items from a db"""
 
 if __name__ == "__main__":
-    import MySQLdb
-    import sys
-    connect = MySQLdb.connect(user=sys.argv[1], host="localhost",
-                              port=3306, password=sys.argv[2],
-                              db=sys.argv[3])
+        import MySQLdb
+        import sys
 
-    now = connect.cursor()
+        username = sys.argv[1]
+        password = sys.argv[2]
+        db = sys.argv[3]
 
-    query_rows = now.fetchone()
+        connect = MySQLdb.connect(user=username,
+                                  host="localhost",
+                                  port=3306,
+                                  password=password,
+                                  db=db)
 
-    for row in query_rows:
-        print(query_rows)
-        query_rows = now.fetchone()
-    now.close()
-    connect.close()
+        connection = connect.cursor()
+        connection.execute("SELECT * FROM states WHERE name LIKE BINARY \
+                'N%' ORDER BY id ASC")
+
+        query_row = connection.fetchone()
+        for row in query_row:
+                print(query_row)
+                query_row = connection.fetchone()
+        connection.close()
+        connect.close()
