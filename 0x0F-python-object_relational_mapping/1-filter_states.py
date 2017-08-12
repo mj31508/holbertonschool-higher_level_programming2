@@ -20,7 +20,7 @@ if __name__ == "__main__":
                 'N%' ORDER BY id ASC")
 
         query_row = connection.fetchone()
-        for row in query_row:
+        while query_row:
                 print(query_row)
                 query_row = connection.fetchone()
         connection.close()
