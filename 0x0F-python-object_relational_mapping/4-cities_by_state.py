@@ -10,17 +10,16 @@ if __name__ == "__main__":
         db = sys.argv[3]
 
         connect = MySQLdb.connect(user=username,
-                                     xhost="localhost",
-                                     port=3306,
-                                     password=password,
-                                     db=db)
+                                  host="localhost",
+                                  port=3306,
+                                  password=password,
+                                  db=db)
 
         connection = connect.cursor()
-        connection.execute(
-                "SELECT cities.id, cities.name, states.name \
-                FROM cities \
-                JOIN states ON cities.state_id = states.id \
-                ORDER BY cities.id ASC")
+        connection.execute("SELECT cities.id, cities.name, states.name \
+        FROM cities \
+        JOIN states ON cities.state_id = states.id \
+        ORDER BY cities.id ASC")
 
         city = connection.fetchone()
         while (city):
