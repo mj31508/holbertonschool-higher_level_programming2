@@ -8,13 +8,13 @@ if __name__ == "__main__":
         username = sys.argv[1]
         password = sys.argv[2]
         db = sys.argv[3]
-        state = sys.argv[4]
+        
 
         db_connect = MySQLdb.connect(user=username,
-                                  host="localhost",
-                                  port=3306,
-                                  password=password,
-                                  db=db)
+                                     xhost="localhost",
+                                     port=3306,
+                                     password=password,
+                                     db=db)
 
         connection = db_connect.cursor()
         connection.execute("SELECT cities.id, cities.name, states.name \
