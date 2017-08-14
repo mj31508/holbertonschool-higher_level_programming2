@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
         connection = connect.cursor()
         connection.execute("SELECT * FROM states WHERE name LIKE BINARY \
-                '{:s}' ORDER BY id ASC".format(state, ))
+                %s ORDER BY id ASC", (state, ))
 
         state = connection.fetchone()
         while state:
