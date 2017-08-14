@@ -18,10 +18,10 @@ if __name__ == "__main__":
         connection = db_connect.cursor()
         connection.execute("SELECT cities.id, cities.name, states.name \
         FROM cities \
-        JOIN states ON cities.stateid = states.id \
+        JOIN states ON cities.state_id = states.id \
         ORDER BY cities.id ASC")
 
-        state = connection.fetchone()
+        city = connection.fetchone()
         while (city):
                 print(city)
                 city = connection.fetchone()
