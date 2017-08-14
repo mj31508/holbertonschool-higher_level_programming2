@@ -22,7 +22,7 @@ if __name__ == "__main__":
         WHERE stateid IN \
         (SELECT id FROM states \
         WHERE name LIKE \
-        '{:s}')".format(state)
+        BINARY '{:s}')".format(state))
 
-        cities = connection.fetchone()
+        cities = connection.fetchall()
         print(", ".join(city[0] for city in cities))
