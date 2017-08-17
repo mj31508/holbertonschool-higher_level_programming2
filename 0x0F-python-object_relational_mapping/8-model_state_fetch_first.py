@@ -2,25 +2,30 @@
 
 ''' listing all object in a table '''
 
-if __name__== '__main__':
 
-from sys import argv
+import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
-    argv[1], argv[2], argv[3]))
-Base.metadata.create_all(engine)
+if __name__ == '__main__':
+    host = "localhost"
+    port = 3306
+    user = sys.argv[1]
+    password = sys.argv[2]
+    db = sys.argv[3]
 
-Session.sessionmaker(bind=engine)
-session = Session()
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
+        user, passworf, host, port, databae))
 
-state_1 = session.query(State.id, State.name).first()
-if (state_1 is None):
-    print("Nothing")
-else:
-    print("{:d}: {:s}".format(state_1[0], state_1[1]))
-session.close()
+    Session.sessionmaker(bind=engine)
+    session = Session()
+
+    state_1 = session.query(State.id, State.name).first()
+    if (state_1 is None):
+        print("{}: {}"/format(state_1.id, str(state_1)))
+    else:
+        print("Nothing")
+    session.close()
