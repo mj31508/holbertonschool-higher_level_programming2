@@ -18,7 +18,11 @@ if __name__ == '__main__':
     db = sys.argv[3]
 
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
-        user, passworf, host, port, databae))
+        user,
+        password,
+        host,
+        port,
+        databae))
 
     Session.sessionmaker(bind=engine)
     session = Session()
