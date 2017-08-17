@@ -1,4 +1,4 @@
-p#!/usr/bin/python3
+#!/usr/bin/python3
 """selecting items from a db"""
 
 if __name__ == "__main__":
@@ -16,12 +16,12 @@ if __name__ == "__main__":
                                   db=db)
 
         connection = connect.cursor()
-        connection.execute("SELECT * FROM states WHERE name LIKE BINARY \
-        'N%' ORDER BY id ASC")
+        connection.execute("SELECT cities.id, cities.name, states.name \
+        FROM cities \
+        JOIN states ON cities.state_id = states.id \
+        ORDER BY cities.id ASC")
 
-        query_row = connection.fetchone()
-        while query_row:
-                print(query_row)
-                query_row = connection.fetchone()
-        connection.close()
-        connect.close()
+        city = connection.fetchone()
+        while (city):
+                print(city)
+                city = connection.fetchone()

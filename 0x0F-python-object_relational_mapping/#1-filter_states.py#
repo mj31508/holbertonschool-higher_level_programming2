@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+"""selecting items from a db"""
+
+if __name__ == "__main__":
+        import MySQLdb
+        import sys
+
+        username = sys.argv[1]
+        password = sys.argv[2]
+        db = sys.argv[3]
+
+        connect = MySQLdb.connect(user=username,

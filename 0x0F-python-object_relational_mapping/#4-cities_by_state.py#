@@ -1,4 +1,4 @@
-p#!/usr/bin/python3
+#!/usr/bin/python3
 """selecting items from a db"""
 
 if __name__ == "__main__":
@@ -9,19 +9,19 @@ if __name__ == "__main__":
         password = sys.argv[2]
         db = sys.argv[3]
 
-        connect = MySQLdb.connect(user=username,
+        db_connect = MySQLdb.connect(user=username,
                                   host="localhost",
                                   port=3306,
                                   password=password,
                                   db=db)
 
-        connection = connect.cursor()
+        connection = dbconnect.cursor()
         connection.execute("SELECT * FROM states WHERE name LIKE BINARY \
-        'N%' ORDER BY id ASC")
+                %s ORDER BY id ASC", (state, ))
 
-        query_row = connection.fetchone()
-        while query_row:
-                print(query_row)
-                query_row = connection.fetchone()
+        state = connection.fetchone()
+        while state:
+                print(state)
+                state = connection.fetchone()
         connection.close()
         connect.close()
