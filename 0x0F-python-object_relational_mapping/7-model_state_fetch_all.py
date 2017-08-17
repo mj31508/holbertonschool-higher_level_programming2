@@ -10,11 +10,11 @@ if __name__ == '__main__':
     from sqlalchemy import Column, Integer, String
     from sqlalchemy.orm import sessionmaker
 
-engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
-    argv[1], argv[2], argv[3]))
-Base.metadata.create_all(engine)
-Session.configure(bind=engine)
-session = Session()
-for state in session.query(State).order_by(State.id).all():
-    print("{}: {}".format(state.id, state.name))
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
+        user, password, host, port, database))
+
+    session = sessionmaker(bind=engine)
+    session = Session()
+    for state in states:
+        print("{}: {}".format(state, id, state.name))
 session.close()
