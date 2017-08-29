@@ -2,7 +2,6 @@
 # script that takes in a URL and an email, sends a POST request
 
 import urlib.request
-import urlib.parse
 import sys
 
 if __name__ == '__main__':
