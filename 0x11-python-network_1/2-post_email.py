@@ -8,7 +8,6 @@ if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
     email_dic = {"email": email}
-    print(email_dic)
     data = urllib.parse.urlencode(email_dic)
     data = data.encode('ascii')
     with urllib.request.urlopen(url, data) as response:
