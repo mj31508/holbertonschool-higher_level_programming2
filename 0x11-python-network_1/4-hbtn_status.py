@@ -3,7 +3,7 @@
 import requests
 
 if __name__ == "__main__":
-    print("Body Response")
-    response = requests.get("https://intranet.hbtn.io/status")
-    print("\t- type: {}".format(type(response.text)))
-    print("\t- content: {}".format(response.text))
+    req_get = requests.get('https://intranet.hbtn.io/status').text
+    print("Body response:")
+    print("\t- type: {}".format(type(req_get)))
+    print("\t- content: {}".format(req_get))
