@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#print a 200 error response
+# print a 200 error response
 import requests
 import sys
 
