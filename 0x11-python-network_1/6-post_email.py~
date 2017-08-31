@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+# get body response
+
+import requests
+import sys
+
+if __name__ == "__main__":
+    url_arg = sys.argv[1]
+    email = sys.argv[2]
+    email_param = {'email': email}
+    req_post = requests.post(url_arg, data=email_param)
+    print(req_post.text)
