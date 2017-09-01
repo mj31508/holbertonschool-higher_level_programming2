@@ -1,16 +1,21 @@
 #!/usr/bin/python3
 # sends a post request
+import requests
+import sys
 
-if __name__ "__main__":
-    try:
-        post = sys.argv[1]
-    except:
-        post = ""
+if __name__ == "__main__":
 
-    url = "http://0.0.0.0:5000/search_user"
-    req = requests.post(url, data={"q": post})
+    if len(sys.argv) < 2:
+        q_load = {"q": ""}
+    else:
+        q_load = {"q": sys.argv[1]}
 
-    if req == {}:
+    r = requests.post("http://0.0.0.0:5000/search_user", data=q_load)
+    r_json = r.json()
+
+    if r.headers["content-type"] is 'application/json':
+        print("Not a valid JSON")
+    elif len(r_json) == 0:
         print("No result")
     else:
-        print("[{}] {}".format(req["id"], req["name"]))
+        print("[{}] {}".format(r_json.get("id"), r_json.get("name")))
