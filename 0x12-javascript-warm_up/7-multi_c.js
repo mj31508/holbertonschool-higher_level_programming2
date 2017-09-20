@@ -3,7 +3,7 @@
 // printing a script by multiples
 
 if (parseFloat(process.argv[2])) {
-  for (let x = 0; x < parseInt(process.argv[2]); x++) {
+  for (let num = 0; num < parseInt(process.argv[2]); num++) {
     console.log('C is fun');
   }
 } else {
