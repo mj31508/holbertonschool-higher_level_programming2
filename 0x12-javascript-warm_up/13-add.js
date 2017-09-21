@@ -2,7 +2,7 @@
 
 // calling a global function
 
-let add = function (a, b) {
+const add = function (a, b) {
   console.log(3 + 5);
 };
 
