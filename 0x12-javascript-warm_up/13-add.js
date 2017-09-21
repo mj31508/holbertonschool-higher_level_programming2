@@ -1,10 +1,7 @@
 #!/usr/bin/node
 
-// calling a global function
-
-const add = function (a, b) {
-  console.log(3 + 5);
-};
-
-require('./13-add.js');
-add();
+exports.add = function(a, b) {
+    num1 = parseFloat(a);
+    num2 = parseFloat(b);
+    return (num1 + num2);
+}
