@@ -4,7 +4,7 @@ let fs = require('fs');
 let arg = process.argv[2];
 fs.readFile(arg, 'utf-8', function (err, data) {
   if (err) {
-    process.stdout.write(err);
+    process.stdout.write(obj.toString(err));
   } else {
     console.log(data);
   }
