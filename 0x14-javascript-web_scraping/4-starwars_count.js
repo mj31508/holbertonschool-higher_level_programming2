@@ -14,7 +14,7 @@ request(arg, function (error, response, body) {
       for (let n in a) {
         if (a[n].includes('18')) {
           count++;
-	}
+        }
       }
     }
     console.log(count);
