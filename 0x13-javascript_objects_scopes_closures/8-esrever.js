@@ -6,4 +6,4 @@ exports.esrever = function (list) {
     store.push(list[Nlength]);
   }
   return store;
-}
+};
