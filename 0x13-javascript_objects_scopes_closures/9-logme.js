@@ -2,6 +2,6 @@
 
 let num = 0;
 exports.logME = function (item) {
-  console.log(count + ':' + item);
-  count++;
+  console.log(num + ':' + item);
+  num++;
 };
