@@ -7,10 +7,7 @@ exports.Rectangle = function Rectangle (w, h) {
 
     this.print = function () {
       for (let x = 0; x < h; x++) {
-      // for (let i = 0; i < w; i++) {
-      // process.stdout.write('X');
         console.log('X'.repeat(w));
-      // console.log(this.height);
       }
     };
 
